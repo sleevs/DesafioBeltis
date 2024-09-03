@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:rich="http://www.jboss.org/richfaces"
+       xmlns:a4j="http://www.jboss.org/a4j">
+<h:head>
+    <title>MSEC - PROJECT JSF with RichFaces</title>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{tarefaController.list()}" />
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <h:form>
+        <h:panelGroup>
+            <h3>Accounts</h3>
+            <rich:dataTable var="tarefa" value="#{tarefaController.tarefas}" border="1">
+                <rich:column>
+                    <f:facet name="header">ID</f:facet>
+                    #{tarefa.id}
+                </rich:column>
+                <rich:column>
+                    <f:facet name="header">Título</f:facet>
+                    #{tarefa.titulo}
+                </rich:column>
+                <rich:column>
+                    <f:facet name="header">Descrição</f:facet>
+                    #{tarefa.descricao}
+                </rich:column>
+                <rich:column>
+                    <f:facet name="header">Prioridade</f:facet>
+                    #{tarefa.prioridade}
+                </rich:column>
+                <rich:column>
+                    <f:facet name="header">Estimativa</f:facet>
+                    #{tarefa.estimativa}
+                </rich:column>
+                <rich:column>
+                    <f:facet name="header">Projeto ID</f:facet>
+                    #{tarefa.projeto}
+                </rich:column>
+                <rich:column>
+                    <f:facet name="header">Action</f:facet>
+                    <a4j:commandLink action="#{tarefaController.editarTarefa(tarefa)}" value="Editar" />
+                    <a4j:commandLink action="#{tarefaController.excluirTarefa(tarefa)}" value="Deletar"
+                        onclick="return confirm('Deseja deletar esse registro?')" />
+                </rich:column>
+            </rich:dataTable>
+        </h:panelGroup>
+    </h:form>
+</h:body>
+</html>

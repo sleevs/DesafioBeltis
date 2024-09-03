@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:rich="http://www.jboss.org/richfaces"
+       xmlns:a4j="http://www.jboss.org/a4j">
+<h:head>
+    <title>Projetos</title>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{projetoController.listar()}" />
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <h:form>
+        <h:panelGroup>
+            <h3>Accounts</h3>
+            <rich:dataTable var="projeto" value="#{projetoController.listProjetoDto}" border="1">
+                <rich:column>
+                    <f:facet name="header">ID</f:facet>
+                    #{projeto.id}
+                </rich:column>
+                <rich:column>
+                    <f:facet name="header">Título</f:facet>
+                    #{projeto.titulo}
+                </rich:column>
+                <rich:column>
+                    <f:facet name="header">Descrição</f:facet>
+                    #{projeto.descricao}
+                </rich:column>
+                <rich:column>
+                    <f:facet name="header">Usuario ID</f:facet>
+                    #{projeto.usuario}
+                </rich:column>
+    
+                <rich:column>
+                    <f:facet name="header">Ações</f:facet>
+                    <a4j:commandLink action="#{projetoController.editarProjeto(projeto)}" value="Editar" />
+                    <a4j:commandLink action="#{projetoController.excluirProjeto(projeto)}" value="Deletar"
+                        onclick="return confirm('Deseja deletar esse registro?')" />
+                </rich:column>
+            </rich:dataTable>
+        </h:panelGroup>
+    </h:form>
+</h:body>
+</html>

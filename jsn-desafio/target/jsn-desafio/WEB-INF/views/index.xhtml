@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:a4j="http://www.jboss.org/a4j"
+       xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:rich="http://www.jboss.org/richfaces">
+<h:head>
+    <title>MSEC - PROJECT JSF with RichFaces</title>
+    <f:metadata>
+    <f:event type="preRenderView" listener="#{accountManager.list()}" />
+    </f:metadata>
+</h:head>
+<h:body>
+    
+    <h3>Accounts</h3>
+    <h:dataTable var="account" value="#{accountManager.listAccounyts}" border="1">
+        <h:column>
+            <f:facet name="header">ID</f:facet>
+            #{account.accountId}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Name</f:facet>
+            #{account.accountName}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Email</f:facet>
+            #{account.accountEmail}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Phone</f:facet>
+            #{account.accountPhone}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Document</f:facet>
+            #{account.accountDocument}
+        </h:column>
+    </h:dataTable>
+</h:body>
+</html>
