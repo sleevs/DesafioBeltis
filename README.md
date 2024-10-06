@@ -1,6 +1,6 @@
-# Projeto Spring MVC com PostgreSQL e Tomcat
+# Projeto com aplicação com arquitetura monolithic
 
-Este projeto é um exemplo de aplicação Spring MVC integrada com PostgreSQL e executada em um contêiner Tomcat. As instruções a seguir cobrem como iniciar o projeto utilizando Docker Compose.
+Este projeto é um exemplo de uma aplicação Web com as seguintes tecnologias Spring MVC , PostgreSQL , Apache Tomcat,  JSF framework e Docker.
 
 ## Pré-requisitos
 
