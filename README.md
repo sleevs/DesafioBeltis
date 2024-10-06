@@ -1,8 +1,8 @@
-# Projeto com aplicação com arquitetura monolithic
+### Projeto com aplicação com arquitetura monolithic
 
 Este projeto é um exemplo de uma aplicação Web com as seguintes tecnologias Spring MVC , PostgreSQL , Apache Tomcat,  JSF framework e Docker.
 
-## Pré-requisitos
+#### Pré-requisitos
 
 Antes de começar, certifique-se de que você tem as seguintes ferramentas instaladas:
 
@@ -11,13 +11,13 @@ Antes de começar, certifique-se de que você tem as seguintes ferramentas insta
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
-## Configuração do Projeto
+#### Configuração do Projeto
 
-### 1. Configuração do PostgreSQL
+##### 1. Configuração do PostgreSQL
 
 O PostgreSQL será executado em um contêiner Docker, conforme especificado no arquivo `docker-compose.yml`. O banco de dados será inicializado com as configurações fornecidas.
 
-### 2. Configuração do Tomcat
+##### 2. Configuração do Tomcat
 
 O Tomcat também será executado em um contêiner Docker, e o arquivo `docker-compose.yml` configurará o Tomcat para expor a aplicação na porta 8080.
 
@@ -25,7 +25,7 @@ O Tomcat também será executado em um contêiner Docker, e o arquivo `docker-co
 
 Certifique-se de que o seu projeto Spring MVC está configurado para conectar ao PostgreSQL. As configurações necessárias são especificadas no arquivo `application.properties` ou `application.yml`, dependendo do seu projeto.
 
-### 4. Configuração do Docker Compose
+##### 4. Configuração do Docker Compose
 
 O Docker Compose será usado para iniciar os contêineres PostgreSQL e Tomcat.
 
